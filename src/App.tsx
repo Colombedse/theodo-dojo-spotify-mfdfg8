@@ -10,7 +10,7 @@ const App = () => {
       </header>
       <div className="App-images">
         <p>Il va falloir modifier le code pour faire un vrai blind test !</p>
-          <p><audio src={trackUrls[0]} autoPlay controls /> <p>
+        <p><audio src={trackUrls[0]} autoPlay controls /> <p>
       </div>
       <div className="App-buttons"></div>
     </div>
