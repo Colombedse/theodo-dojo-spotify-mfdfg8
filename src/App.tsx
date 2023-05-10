@@ -11,21 +11,22 @@ const App = () => {
       <div className="App-images">
         <p>Il va falloir modifier le code pour faire un vrai blind test !</p>
         <p><audio src={trackUrls[0]} autoPlay controls /> <p>
-        <p> 
-          let trackIndex = 0;
-          const goToNextTrack = () => 
-            {
-            trackIndex += 1;
-            }
-            <audio src={trackUrls[trackIndex]} autoPlay controls />
-            <button onClick={goToNextTrack}>
-                  Next track
-            </button> <p>
       </div>
       <div className="App-buttons"></div>
-    </div>
+      <button onClick={goToNextTrack}>
+    Next track
+</button>
   );
 };
+  
+let trackIndex = 0;
+const goToNextTrack = () => 
+{
+  trackIndex += 1;
+}
+
+<audio src={trackUrls[trackIndex]} autoPlay controls />
+
 
 const trackUrls = [
   'https://p.scdn.co/mp3-preview/742294f35af9390e799dd96c633788410a332e52',
