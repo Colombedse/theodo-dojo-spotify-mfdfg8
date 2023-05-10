@@ -1,32 +1,37 @@
 import logo from './assets/logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 const App = () => {
+  const [trackIndex, setTrackIndex] = useState(0);
+  const goToNextTrack = () => {
+    setTrackIndex(trackIndex + 1);
+  };
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="App-title">Bienvenue sur le blind test feat : Colombedse</h1>
+        <h1 className="App-title">
+          Bienvenue sur le blind test feat : Colombedse
+        </h1>
       </header>
       <div className="App-images">
         <p>Il va falloir modifier le code pour faire un vrai blind test !</p>
-        <p><audio src={trackUrls[0]} autoPlay controls /> <p>
+        <p>
+          <audio src={trackUrls[0]} autoPlay controls />{' '}
+        </p>
       </div>
+      <audio src={trackUrls[trackIndex]} autoPlay controls />;
       <div className="App-buttons"></div>
-      <button onClick={goToNextTrack}>
-    Next track
-</button>
+      <button onClick={goToNextTrack}>Next track</button>
+    </div>
   );
 };
-  
+
 let trackIndex = 0;
-const goToNextTrack = () => 
-{
+const goToNextTrack = () => {
   trackIndex += 1;
-}
-
-<audio src={trackUrls[trackIndex]} autoPlay controls />
-
+};
 
 const trackUrls = [
   'https://p.scdn.co/mp3-preview/742294f35af9390e799dd96c633788410a332e52',
