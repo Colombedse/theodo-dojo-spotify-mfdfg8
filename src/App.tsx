@@ -10,6 +10,7 @@ const App = () => {
       </header>
       <div className="App-images">
         <p>Il va falloir modifier le code pour faire un vrai blind test !</p>
+          <p><audio src={trackUrls[0]} autoPlay controls /> <p>
       </div>
       <div className="App-buttons"></div>
     </div>
@@ -23,7 +24,5 @@ const trackUrls = [
   'https://p.scdn.co/mp3-preview/0f6b8a3524ec410020457da4cdd7717f9addce2f',
   'https://p.scdn.co/mp3-preview/ac28d1b0be285ed3bfd8e9fa5fad133776d7cf36',
 ];
-
-<audio src={trackUrls[0]} autoPlay controls />
 
 export default App;
