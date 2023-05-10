@@ -17,9 +17,6 @@ const App = () => {
       </header>
       <div className="App-images">
         <p>Il va falloir modifier le code pour faire un vrai blind test !</p>
-        <p>
-          <audio src={trackUrls[0]} autoPlay controls />{' '}
-        </p>
       </div>
       <audio src={trackUrls[trackIndex]} autoPlay controls />;
       <div className="App-buttons"></div>
@@ -28,9 +25,21 @@ const App = () => {
   );
 };
 
-let trackIndex = 0;
-const goToNextTrack = () => {
-  trackIndex += 1;
+const apiToken = '';
+
+export const fetchTracks = async () => {
+  const response = await fetch('https://api.spotify.com/v1/me/tracks', {
+    method: 'GET',
+    headers: {
+      Authorization: 'Bearer ' + apiToken,
+    },
+  });
+  if (!response.ok) {
+    throw new Error(`Fetching tracks failed with status ${response.status}`);
+  }
+  const data = (await response.json()) as { items: unknown[] };
+
+  return data.items;
 };
 
 const trackUrls = [
